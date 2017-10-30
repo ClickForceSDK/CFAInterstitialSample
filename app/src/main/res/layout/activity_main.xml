@@ -17,12 +17,12 @@
         android:src="@drawable/samplelogo"
         />
 
-    <com.clickforce.ad.AdView
+    <com.clickforce.ad.AdInterstitialView
         android:id="@+id/fullad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true">
-    </com.clickforce.ad.AdView>
+    </com.clickforce.ad.AdInterstitialView>
 
 </RelativeLayout>

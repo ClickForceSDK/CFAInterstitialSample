@@ -3,23 +3,41 @@ package com.force.click.cfainterstitialsample;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.clickforce.ad.AdView;
+import com.clickforce.ad.AdInterstitialView;
+import com.clickforce.ad.Listener.AdInterstitialListener;
 
 public class MainActivity extends AppCompatActivity {
-    private AdView fullad ;
+    private AdInterstitialView fullad ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        fullad = (AdView) this.findViewById(R.id.fullad);
+        fullad = (AdInterstitialView) this.findViewById(R.id.fullad);
         fullad.getFullScreenAd(3789);
+
+        fullad.setOnAdInterstitialListener(new AdInterstitialListener() {
+            @Override
+            public void onCloseFullAd() {
+
+            }
+
+            @Override
+            public void onFailToFullAd() {
+
+            }
+
+            @Override
+            public void onSuccessToFullAd() {
+
+                fullad.show();
+            }
+
+            @Override
+            public void onClickToFullAd() {
+
+            }
+        });
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        if (fullad != null)
-            fullad.releaseAd();
-    }
 }
