@@ -14,8 +14,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         fullad = (AdInterstitialView) this.findViewById(R.id.fullad);
-        fullad.getFullScreenAd(3789);
-
+        fullad.init(this);
+        fullad.getFullScreenAd(3788);
+        fullad.outputDebugInfo = true;
         fullad.setOnAdInterstitialListener(new AdInterstitialListener() {
             @Override
             public void onCloseFullAd() {
